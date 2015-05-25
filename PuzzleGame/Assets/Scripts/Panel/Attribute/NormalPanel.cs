@@ -36,7 +36,7 @@ public class NormalPanel : AttributeInterFace
 
     void Move()
     {
-        this.transform.position = Vector3.Lerp(this.transform.position, m_current_Movetarget.transform.position, 0.1f);
+        this.transform.position = Vector3.Lerp(this.transform.position, m_current_Movetarget.transform.position, 0.25f);
         float dist = (this.transform.position - m_current_Movetarget.transform.position).magnitude;
         if(dist < 0.001f)
         {

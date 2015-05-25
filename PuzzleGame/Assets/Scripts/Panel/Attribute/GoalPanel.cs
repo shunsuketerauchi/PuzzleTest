@@ -37,7 +37,6 @@ public class GoalPanel : AttributeInterFace {
                 if(Add_Score(it))
                 {
                     Begin_Effect();
-                    DestroyObject(it);
                     DestroyObject(this.gameObject);
                 }
 
@@ -69,7 +68,10 @@ public class GoalPanel : AttributeInterFace {
         int sub_score = (int)normal_attribute.m_currentTime;
 
         m_TargetCount -= sub_score;
-        return true;
+        DestroyObject(add_Object);
+        if(m_TargetCount ==0)
+            return true;
+        return false;
     }
 
 
